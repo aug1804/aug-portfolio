@@ -1,4 +1,4 @@
-python
+python 3.10.4
 django
 
 "start": "node app.js"
