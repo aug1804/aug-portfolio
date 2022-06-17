@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="card">
+		<div class="card-body">
+			<h4>AUTORES</h4>
+			<hr>
+
+			<!-- 
+			claro que não funciona, deveria ser a tag <a> 
+			<button class="btn btn-success" href="{% url 'autor_add' %}"> Adicionar (não funciona) </button>
+			-->
+
+			<a class="btn btn-success" href="{% url 'autor_add' %}"> Adicionar </a>
+
+			<a class="btn btn-success" href="{% url 'home' %}"> Home </a>
+
+            <!--
+            <a href="add/">
+				<button class="btn btn-success"> Adicionar (também funciona) </button>
+			</a>
+            -->
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nome (sort)</th>
+						<th>E-mail</th>
+						<th>Data Nascimento</th>
+						<th>Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--
+					<tr>
+						<td>autor.nome</td>
+						<td>autor.email</td>
+						<td>autor.data_nascimento</td>
+						<td>
+							<button class="btn btn-warning">Editar</button>
+							<button class="btn btn-danger">Excluir</button>
+						</td>
+					</tr>
+					-->
+					{% for autor in autores %}
+					<tr>
+						<td>{{ autor.nome }}</td>
+						<td>{{ autor.email }}</td>
+						<td>{{ autor.data_nascimento }}</td>
+						<td>
+
+							<a class="btn btn-warning" href="{% url 'autor_edit' autor.id %}">Editar</a>
+
+							<a class="btn btn-danger" href="{% url 'autor_delete' autor.id %}" 
+							   onclick="return confirm('Tem certeza que deseja DELETAR esse Autor?')">Excluir</a>
+
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+	    </div>
+	</div>
+
+{% endblock %}

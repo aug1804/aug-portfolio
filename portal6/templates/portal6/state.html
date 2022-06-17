@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4>ESTADOS</h4>
+        <hr>
+
+        <a class="btn btn-success" href="{% url 'state_add' %}"> Adicionar </a>
+
+        <a class="btn btn-success" href="{% url 'home' %}"> Home </a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Estado ou DF (sort)</th>
+                    <th>País</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for state in states %}
+                <tr>
+                    <td>{{ state.state_name }}</td>
+                    <td>{{ state.state_country }}</td>
+                    <td>
+
+                        <a class="btn btn-warning" href="{% url 'state_edit' state.id %}">Editar</a>
+
+                        <a class="btn btn-danger" href="{% url 'state_delete' state.id %}"
+                           onclick="return confirm('Tem certeza que deseja DELETAR esse ESTADO (ou DF)?')">Excluir</a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

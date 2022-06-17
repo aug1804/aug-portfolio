@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4>CIDADES</h4>
+        <hr>
+
+        <a class="btn btn-success" href="{% url 'city_add' %}"> Adicionar </a>
+
+        <a class="btn btn-success" href="{% url 'home' %}"> Home </a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Cidade (sort)</th>
+                    <th>Estado (ou DF)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for city in cities %}
+                <tr>
+                    <td>{{ city.city_name }}</td>
+                    <td>{{ city.city_state }}</td>
+                    <td>
+                        <a class="btn btn-warning" href="{% url 'city_edit' city.id %}">Editar</a>
+                        <a class="btn btn-danger" href="{% url 'city_delete' city.id %}"
+                            onclick="return confirm('Tem certeza que deseja DELETAR essa Cidade?')">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

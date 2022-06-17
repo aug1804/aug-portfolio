@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card">
+      <div class="card-body">
+        <h4>EDITAR FORMATO</h4>
+        <hr>
+        
+        <!-- 
+        tenho que descobrir uma forma de substituir o '3' (número fixo) por 'formato.id' ou formato_pk' 
+        <form action="{% url 'formato_edit' 3 %}" method="post">
+        *** porra nenhuma, removi o 'action' e funcionou ***
+        -->  
+        
+        <form method="post">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+
+            <a href="{% url 'formato' %}" class="btn btn-danger">Cancelar</a>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

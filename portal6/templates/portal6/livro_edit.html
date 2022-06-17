@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card">
+      <div class="card-body">
+        <h4>EDITAR LIVRO</h4>
+        <hr>
+        
+        <!-- 
+        tenho que descobrir uma forma de substituir o '3' (número fixo) por 'livro.id' ou livro_pk' 
+        <form action="{% url 'livro_edit' 3 %}" method="post">
+        *** porra nenhuma, removi o 'action' e funcionou ***
+        -->  
+        
+        <form method="post">
+
+            {% csrf_token %}
+
+            <table>
+              {{ form.as_table }}
+            </table>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+
+            <a href="{% url 'livro' %}" class="btn btn-danger">Cancelar</a>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

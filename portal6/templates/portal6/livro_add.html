@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card">
+      <div class="card-body">
+        <h4>ADICIONAR LIVRO</h4>
+        <hr>
+        
+        <form action="{% url 'livro_add' %}" method="post">
+
+            {% csrf_token %} <!-- Cross Site Request Forgery protection -->
+
+            <table>
+              {{ form.as_table }}
+            </table>
+
+            <!-- além de {{ form.as_p }}, tem também {{ form.as_table }} e {{ form.as_ul }} -->
+
+            <!-- esta porra é o padrão, não dá para customizar, quem não quiser usar, tem que fazer tudo manualmente -->
+            
+            <!-- django models foreign key combobox -->
+            
+            <!-- 
+              {{ form.titulo }}
+              {{ form.subtitulo }}
+              {{ form.autor }}
+              {{ form.editora }}
+              {{ form.formato }} 
+              {{ form.data_lancamento }}
+              {{ form.isbn }}
+              {{ form.numero_paginas }}
+            -->
+
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+
+            <a href="{% url 'livro' %}" class="btn btn-danger">Cancelar</a>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

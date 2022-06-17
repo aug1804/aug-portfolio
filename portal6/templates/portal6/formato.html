@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4>FORMATOS</h4>
+        <hr>
+
+        <!-- 
+            claro que não funciona, deveria ser a tag <a> 
+    		<button class="btn btn-success" href="{% url 'formato_add' %}"> Adicionar (não funciona) </button>
+    		-->
+
+        <a class="btn btn-success" href="{% url 'formato_add' %}"> Adicionar </a>
+
+        <a class="btn btn-success" href="{% url 'home' %}"> Home </a>
+
+        <!--
+                <a href="add/">
+    				<button class="btn btn-success"> Adicionar (também funciona) </button>
+    			</a>
+                -->
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome (sort)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--
+    					<tr>
+    						<td>formato.nome</td>
+    						<td>
+    							<button class="btn btn-warning">Editar</button>
+    							<button class="btn btn-danger">Excluir</button>
+    						</td>
+    					</tr>
+    					-->
+                {% for formato in formatos %}
+                <tr>
+                    <td>{{ formato.nome }}</td>
+                    <td>
+
+                        <a class="btn btn-warning" href="{% url 'formato_edit' formato.id %}">Editar</a>
+
+                        <a class="btn btn-danger" href="{% url 'formato_delete' formato.id %}"
+                           onclick="return confirm('Tem certeza que deseja DELETAR essa Formato?')">Excluir</a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

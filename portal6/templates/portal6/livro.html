@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4>LIVROS</h4>
+        <hr>
+
+        <!-- 
+            claro que não funciona, deveria ser a tag <a> 
+    		<button class="btn btn-success" href="{% url 'livro_add' %}"> Adicionar (não funciona) </button>
+    		-->
+
+        <a class="btn btn-success" href="{% url 'livro_add' %}"> Adicionar </a>
+
+        <a class="btn btn-success" href="{% url 'home' %}"> Home </a>
+
+        <!--
+                <a href="add/">
+    				<button class="btn btn-success"> Adicionar (também funciona) </button>
+    			</a>
+                -->
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Título (sort)</th>
+                    <th>Subtítulo</th>
+                    <th>Autor</th>
+                    <th>Editora</th>
+                    <th>Formato</th>
+                    <th>Data Lançamento</th>
+                    <th>ISBN</th>
+                    <th>Número Páginas</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--
+    					<tr>
+    						<td>livro.nome</td>
+    						<td>livro.cidade</td>
+    						<td>livro.estado</td>
+    						<td>
+    							<button class="btn btn-warning">Editar</button>
+    							<button class="btn btn-danger">Excluir</button>
+    						</td>
+    					</tr>
+    					-->
+                {% for livro in livros %}
+                <tr>
+                    <td>{{ livro.titulo }}</td>
+                    <td>{{ livro.subtitulo }}</td>
+                    <td>{{ livro.autor }}</td>
+                    <td>{{ livro.editora }}</td>
+
+                    <td>{{ livro.formato }}</td>
+                    
+                    <td>{{ livro.data_lancamento }}</td>
+                    <td>{{ livro.isbn }}</td>
+                    <td>{{ livro.numero_paginas }}</td>
+                    <td>
+
+                        <a class="btn btn-warning" href="{% url 'livro_edit' livro.id %}">Editar</a>
+
+                        <a class="btn btn-danger" href="{% url 'livro_delete' livro.id %}"
+                            onclick="return confirm('Tem certeza que deseja DELETAR essa Livro?')">Excluir</a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<header>
+		<table>
+			<tr>
+				<td class="tdImag">
+					{% load static %}
+					<img 
+					alt="Foto AC Costa"
+					class="small" 
+					id="smart_thumbnail" 
+					src="{% static 'fotoACCosta.JPG' %}" 
+					>
+				</td>
+				<td class="tdH1">
+					<h1>Portfólio AC Costa</h1>
+				</td>
+			</tr>
+		</table>
+		<ul>
+			<li>
+				<a class="btn btn-success" href="autor"  > Vá para Autor   </a>
+				<a class="btn btn-success" href="editora"> Vá para Editora </a>
+				<a class="btn btn-success" href="formato"> Vá para Formato </a>
+				<a class="btn btn-success" href="livro"  > Vá para Livro   </a>
+			</li>
+		</ul>
+	</header>
+
+	<main>
+		<article>
+			<p class="paragrafo"><b>PORTFÓLIO de Python, Flask, Django, HTML5, CSS3, JavaScript</b></p>
+
+			<p>Após anos trabalhando com várias Linguagens de Programação e ambientes diversos, apresento aqui meu Portfólio de Python, Flask, Django, HTML5, CSS3, JavaScript.</p>
+
+			<p>Baseado numa hipotética Livraria, este Portfólio tem várias dicas, truques, construções interessantes e um ciclo completo de criação, manutenção e listagem de uma base de dados SQL.</p>
+
+			<p>Clique na foto e tenha uma surpresa! Já percebeu o 'sublinhado ondulado' no cabeçalho? País, Estado e Cidade acessado a partir de uma base de dados SQL. E muito mais...</p>
+		</article>
+		<aside>
+			<!-- <p>placeholder to add comment thread later</p> -->
+			<div id="disqus_thread"></div>
+			<script>
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function () { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://geobool.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+					by Disqus.</a></noscript>
+		</aside>
+	</main>
+
+	<footer>
+		<center>
+			<p>Made by AC Costa for <a href="https://www.linkedin.com/in/augusto-calado-costa-theboot/" target="_blank">Portfólio AC Costa</a></p>
+		</center>
+	</footer>
+
+{% endblock %}

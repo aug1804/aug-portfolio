@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4>PAÍSES</h4>
+        <hr>
+
+        <a class="btn btn-success" href="{% url 'country_add' %}"> Adicionar </a>
+
+        <a class="btn btn-success" href="{% url 'home' %}"> Home </a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>País (sort)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for country in countries %}
+                <tr>
+                    <td>{{ country.country_name }}</td>
+                    <td>
+                        <a class="btn btn-warning" href="{% url 'country_edit' country.id %}">Editar</a>
+                        <a class="btn btn-danger" href="{% url 'country_delete' country.id %}"
+                            onclick="return confirm('Tem certeza que deseja DELETAR esse País?')">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

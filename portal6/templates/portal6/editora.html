@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-body">
+            <h4>EDITORAS</h4>
+            <hr>
+    
+            <!-- 
+            claro que não funciona, deveria ser a tag <a> 
+    		<button class="btn btn-success" href="{% url 'editora_add' %}"> Adicionar (não funciona) </button>
+    		-->
+    
+            <a class="btn btn-success" href="{% url 'editora_add' %}"> Adicionar </a>
+
+            <a class="btn btn-success" href="{% url 'home' %}"> Home </a>
+    
+            <!--
+                <a href="add/">
+    				<button class="btn btn-success"> Adicionar (também funciona) </button>
+    			</a>
+                -->
+    
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome (sort)</th>
+                        <th>Cidade</th>
+                        <th>UF (tabela completa)</th> <!-- augustão tabela estados completa -->
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--
+    					<tr>
+    						<td>editora.nome</td>
+    						<td>editora.cidade</td>
+    						<td>editora.estado</td>
+    						<td>
+    							<button class="btn btn-warning">Editar</button>
+    							<button class="btn btn-danger">Excluir</button>
+    						</td>
+    					</tr>
+    					-->
+                    {% for editora in editoras %}
+                    <tr>
+                        <td>{{ editora.nome }}</td>
+                        <td>{{ editora.cidade }}</td>
+                        <td>{{ editora.estado }}</td>
+                        <td>
+    
+                            <a class="btn btn-warning" href="{% url 'editora_edit' editora.id %}">Editar</a>
+    
+                            <a class="btn btn-danger" href="{% url 'editora_delete' editora.id %}"
+                                onclick="return confirm('Tem certeza que deseja DELETAR essa Editora?')">Excluir</a>
+    
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
