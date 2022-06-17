@@ -1,0 +1,10 @@
+python
+django
+
+"start": "node app.js"
+
+'npm start'
+
+"client": "npm run start --prefix ./frontend",
+ou
+"client": "npm run start --prefix ../frontend",
