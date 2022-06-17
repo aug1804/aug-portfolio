@@ -1,2 +1,2 @@
-python 3
-django 4
+python
+django
