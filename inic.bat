@@ -2,7 +2,7 @@
 
 @rem - Windows+R --> cmd
 
-cd C:\Users\aug18\aug\python\meu_projeto6
+cd C:\Users\aug18\aug\pythonOriginal\meu_projeto6
 pause
 
 workon ve
