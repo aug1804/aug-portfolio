@@ -132,10 +132,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-#--> augusto acho que só precisa usar um dos dois abaixo:
+# o django cria automaticamente um diretório chamado 'staticfiles' para manipular os arquivos do diretório '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static_root', 'static')
-
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
