@@ -137,8 +137,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
+# deu erro em os.path.join(BASE_DIR, 'static'),
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'portal6/static'),
 )
 
 # Default primary key field type
