@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Holberton School</title>
+    <link rel="shortcut icon" href="icone.png" />
+    <!-- <link href="https://apply.holbertonschool.com/level2/school.css" rel="stylesheet"> src versus href -->
+         <link href="stylesHolberton.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script type="text/javascript" src="behavior.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="works_on_smartphone">
+    <header>
+      <table>
+        <tr>
+          <!--      src="https://apply.holbertonschool.com/holberton-logo.png" src versus href -->
+          <td><img id="smart_thumbnail" class="small" src="holberton-logo.png" alt="Imagem da Logomarca da Holberton"></td>
+          <td><h1>Holberton School</h1></td>
+        </tr>
+      </table>
+      <ul>
+        <li><a href="http://34.204.49.137/tweets.html">Vá para Tweets</a></li>
+        <li><a href="http://34.204.49.137/tweets.html">Vá para Tweets</a></li>
+        <li><a href="http://34.204.49.137/tweets.html">Vá para Tweets</a></li>
+      </ul>
+    </header>
+    <main>
+      <article>
+          <p class="paragrafo"><b>Venha conferir nosso BOOTCAMP!</b></p>
+          <p>A <b>Holberton</b> é uma <b><em>escola inovadora de formação de Desenvolvedores Web</em></b> que trabalha com treinamentos intensivos chamados de Bootcamp.</p>
+          <p>O Bootcamp é um <b>Evento de Aprendizagem Acelerada</b> online e ao vivo.</p>
+          <p>Todos os nossos eventos são online e ao vivo, ou seja, em tempo real, participantes, Master Devs e mentores <b>interagem para transmitir conhecimentos e formar habilidades de programação</b>.</p>
+      </article>
+      <aside>
+          <!-- <p>placeholder to add comment thread later</p> -->
+          <div id="disqus_thread"></div>
+          <script>
+              /**
+              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+              /*
+              var disqus_config = function () {
+              this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              */
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://geobool.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </aside>
+    </main>
+    <footer>
+      <center>
+        <p>Made by AC Costa for <a href="https://apply.holbertonschool.com" target="_blank">Holberton School</a></p>
+      </center>
+    </footer>
+  </body>
+</html>

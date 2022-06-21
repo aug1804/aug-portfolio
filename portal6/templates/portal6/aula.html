@@ -1,0 +1,27 @@
+{% extends 'baseAula.html' %}
+
+{% block content %}
+
+<div>
+	<h1>Dicas e Exemplos HTML5 CSS3 JavaScript</h1>
+	<p style="margin-left: -15px; margin-top: -1px;text-align: right;">... e outros!</p>
+	<ul>
+		<li><a href="{% url 'aula004' %}">          <b>Cartão de Visita Virtual              </b></a></li>
+		<li><a href="{% url 'aula006theboot' %}">   <b>Página de Apresentação da TheBoot     </b></a></li>
+<!--<li><a href="{% url 'aula006holberton' %}"> <b>Apresentação Holberton School e Disqus</b></a></li> -->
+<!--<li><a href="{% url 'aula006tweets' %}">    <b>Tweets e Disqus                       </b></a></li> -->
+		<li><a href="{% url 'aula007' %}">          <b>Apresentação + Imagem Lado-a-lado     </b></a></li>
+		<li><a href="{% url 'aula008' %}">          <b>Campanha de lançamento do 'Meu Livro'!</b></a></li>
+		<li><a href="{% url 'aula061exemplo' %}">   <b>JavaScript - Lâmpada - Mudar Texto    </b></a></li>
+	</ul>
+	<!-- <p style="margin-top: 10px; text-align: left;">(os itens em <b>negrito</b> são os que considero mais interessantes)</p> -->
+
+	<hr>
+
+	<!-- <br> -->
+
+	<a class="btn btn-success" href="{% url 'home' %}"> Home </a>
+
+</div>
+
+{% endblock %}

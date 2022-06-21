@@ -290,3 +290,37 @@ def city_delete(request, city_pk):
     city = City.objects.get(pk=city_pk)
     city.delete()
     return redirect('city')
+
+# aula
+
+
+def aula(request):
+    return render(request, 'aula.html')
+
+
+def aula004(request):
+    return render(request, 'aula004.html')
+
+
+def aula006theboot(request):
+    return render(request, 'aula006theboot.html')
+
+
+def aula006holberton(request):
+    return render(request, 'aula006holberton.html')
+
+
+def aula006tweets(request):
+    return render(request, 'aula006tweets.html')
+
+
+def aula007(request):
+    return render(request, 'aula007.html')
+
+
+def aula008(request):
+    return render(request, 'aula008.html')
+
+
+def aula061exemplo(request):
+    return render(request, 'aula061exemplo.html')

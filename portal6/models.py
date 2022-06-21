@@ -114,11 +114,13 @@ class Country(models.Model):
     country_name = models.CharField(max_length=255, verbose_name='País')
     def __str__(self):
         return self.country_name
+
 class State(models.Model):
     state_name = models.CharField(max_length=255, verbose_name='Estado ou DF')
     state_country = models.ForeignKey(Country, on_delete=models.CASCADE, verbose_name='País')
     def __str__(self):
         return self.state_name
+
 class City(models.Model):
     city_name = models.CharField(max_length=255, verbose_name='Cidade')
     city_state = models.ForeignKey(State, on_delete=models.CASCADE, verbose_name='Estado ou DF')

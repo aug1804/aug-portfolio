@@ -40,16 +40,28 @@ urlpatterns = [
     path('country/add/', views.country_add, name='country_add'),
     path('country/edit/<int:country_pk>', views.country_edit, name='country_edit'),
     path('country/delete/<int:country_pk>', views.country_delete, name='country_delete'),
+
     # state
     path('state/', views.state, name='state'),
     path('state/add/', views.state_add, name='state_add'),
     path('state/edit/<int:state_pk>', views.state_edit, name='state_edit'),
     path('state/delete/<int:state_pk>', views.state_delete, name='state_delete'),
+
     # city
     path('city/', views.city, name='city'),
     path('city/add/', views.city_add, name='city_add'),
     path('city/edit/<int:city_pk>', views.city_edit, name='city_edit'),
     path('city/delete/<int:city_pk>', views.city_delete, name='city_delete'),
+
+    # aula
+    path('aula/', views.aula, name='aula'),
+    path('aula004/', views.aula004, name='aula004'),
+    path('aula006theboot/', views.aula006theboot, name='aula006theboot'),
+    path('aula006holberton/', views.aula006holberton, name='aula006holberton'),
+    path('aula006tweets/', views.aula006tweets, name='aula006tweets'),
+    path('aula007/', views.aula007, name='aula007'),
+    path('aula008/', views.aula008, name='aula008'),
+    path('aula061exemplo/', views.aula061exemplo, name='aula061exemplo'),
 
 ] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #--> augustão ???
 

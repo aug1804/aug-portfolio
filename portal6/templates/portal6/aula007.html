@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Esta é uma página de divulgação de um aplicativo." />
+    <meta name="keywords" content="theboot, app, html, mensagens" />
+    <title>Meu App de Mensagens</title>
+    <!-- BOOTSTRAP - Copy-paste the stylesheet <link> into your <head> before all other stylesheets to load our CSS. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <style>
+        /* GERAL */
+        * {
+            box-sizing: border-box; /* tamanho leva em consideração o padding */
+        }
+
+        body {
+            background-color: #65D2FB; /* determina a cor de fundo de um elemento */
+            font-family: 'Lato', Arial, Helvetica, sans-serif; /* determina o tipo de fonte */
+        }
+
+        a {
+            text-decoration: none; /* define algum tipo de decoração no texto. Valores: overline, line-through, underline, underline overline */
+        }
+
+        img {
+            width: 85%; /* define o comprimento */
+        }
+
+        /* FONTS */
+        h1 {
+            text-align: right; /* define o alinhamento do texto */
+            font-size: 35px; /* define o tamanho da fonte. Unidades possíveis são px, em, rem, entre outros */
+            text-transform: uppercase; /*define alguma mudança na própria fonte. Valores possíveis: lowercase, uppercase, capitalize */
+        }
+
+        h2 {
+            text-align: right;
+        }
+
+        p {
+            width: 430px;
+            margin-bottom: 110px;
+            text-align: right;  
+        }
+
+        /* UTILITIES */
+        .u-margin-small {
+            margin: 5px;
+        }
+
+        .sobre-conteudo {
+            width: 45%;
+            display: inline-block;
+        }
+
+        .sobre-imagem {
+            width: 45%;
+            display: inline-block;
+        }
+
+        .section-sobre {
+           width: 960px;
+           margin: 0 auto; /* macete para deixar elementos block centralizados */
+           margin-top: 100px;
+        }
+
+        .sobre-conteudo__botoes {
+            text-align: right; /* esse tipo de alinhamento para botões não funciona se for colocado diretamente no elemento <a>. Deve-se colocar essa propriedade no elemento mãe */
+        }
+
+        .btn {
+            padding: 10px 12px;
+            font-size: 16px;
+        }
+
+        .btn_azul {
+            background-color: blue;
+            color: white; /* define a cor do conteúdo do elemento */
+        }
+
+        .btn_transp {
+            color: blue;
+            border: 1px solid #5d1277; /* cria uma borda no elemento. Ordem de valores: grossura-da-borda tipo-da-borda cor-da-borda. */
+        }
+
+
+    </style>
+    </head>
+<body>
+    <div class="section-sobre">
+        <div class="sobre-conteudo">
+          <h1>Título / Meu App</h1>
+            <h2>Isso é um subtítulo / App Exclusivo de Mensagens</h2>
+            <p>Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</strong> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="sobre-conteudo__botoes">
+                <a href="#" class="btn btn_azul">Download</a>
+                <a href="#" class="btn btn_transp u-margin-small">Read more</a>
+            </div>
+        </div>
+        <div class="sobre-imagem">
+            <!-- Tag img: insere uma imagem. O caminho da imagem é inserido no atributo src (source) e o alt (alternative) é necessário para descrição de imagem. O texto do alt aparece quando há quebra de link da imagem ou é lido nos leitores de tela (acessibilidade para pessoas deficientes visuais) -->
+            <img src="https://theboot.com.br/wp-content/uploads/2022/06/img-300x300.png" alt="Imagem do meu aplicativo: um iphone com fundo transparente!!!">
+        </div>
+    </div>
+
+    <hr>
+    <a class="btn btn-success" href="{% url 'aula' %}" style="margin-left: 20px;margin-bottom: 20px;">Voltar para
+        'Dicas'</a>
+
+    </body>
+</html>
